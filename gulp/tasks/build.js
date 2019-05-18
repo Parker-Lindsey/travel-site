@@ -7,7 +7,7 @@ uglify = require('gulp-uglify'),
 browserSync = require('browser-sync').create(),
 del = require('del');
 
-gulp.task('previewDocs', function() {
+gulp.task('previewDist', function() {
   browserSync.init({
     notify: false,
     server: {
