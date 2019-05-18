@@ -1,6 +1,6 @@
 .headline {
+  font-size: 1.9rem;
   font-weight: 300;
-  font-size: 1.9em;
   color: $mainBlue;
 
   @mixin atSmall {
@@ -17,7 +17,6 @@
 
   &--small {
     font-size: 1.2rem;
-
     @mixin atSmall {
       font-size: 1.875rem;
     }
@@ -48,5 +47,4 @@
   &--no-t-margin {
     margin-top: 0;
   }
-
 }

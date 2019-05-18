@@ -27,7 +27,7 @@ var config = {
       }
     }
   }
-};
+}
 
 gulp.task('beginClean', function() {
   return del(['./app/temp/sprite', './app/assets/images/sprites']);
@@ -36,7 +36,7 @@ gulp.task('beginClean', function() {
 gulp.task('createSprite', ['beginClean'], function() {
   return gulp.src('./app/assets/images/icons/**/*.svg')
     .pipe(svgSprite(config))
-    .pipe(gulp.dest('./app/temp/sprite'));
+    .pipe(gulp.dest('./app/temp/sprite/'));
 });
 
 gulp.task('createPngCopy', ['createSprite'], function() {
