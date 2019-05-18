@@ -1,11 +1,11 @@
 var gulp = require('gulp'),
 imagemin = require('gulp-imagemin'),
+del = require('del'),
 usemin = require('gulp-usemin'),
 rev = require('gulp-rev'),
 cssnano = require('gulp-cssnano'),
 uglify = require('gulp-uglify'),
-browserSync = require('browser-sync').create(),
-del = require('del');
+browserSync = require('browser-sync').create();
 
 gulp.task('previewDist', function() {
   browserSync.init({
@@ -16,7 +16,7 @@ gulp.task('previewDist', function() {
   });
 });
 
-gulp.task('deleteDistFolder',['icons'], function() {
+gulp.task('deleteDistFolder', ['icons'], function() {
   return del("./docs");
 });
 
@@ -35,8 +35,8 @@ gulp.task('copyGeneralFiles', ['deleteDistFolder'], function() {
     .pipe(gulp.dest("./docs"));
 });
 
-gulp.task('optimizeImages',['deleteDistFolder'], function() {
-  return gulp.src(['./app/assets/images/**/*', '!./app/assets/images/icons', './app/assets/images/icons/**/*'])
+gulp.task('optimizeImages', ['deleteDistFolder'], function() {
+  return gulp.src(['./app/assets/images/**/*', '!./app/assets/images/icons', '!./app/assets/images/icons/**/*'])
     .pipe(imagemin({
       progressive: true,
       interlaced: true,

@@ -2,7 +2,6 @@ import $ from 'jquery';
 import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoints';
 import smoothScroll from 'jquery-smooth-scroll';
 
-
 class StickyHeader {
   constructor() {
     this.lazyImages = $(".lazyload");
@@ -17,7 +16,7 @@ class StickyHeader {
   }
 
   refreshWaypoints() {
-    this.lazyImages.on('load', function() {
+    this.lazyImages.load(function() {
       Waypoint.refreshAll();
     });
   }
@@ -55,6 +54,7 @@ class StickyHeader {
         },
         offset: "18%"
       });
+
       new Waypoint({
         element: currentPageSection,
         handler: function(direction) {
